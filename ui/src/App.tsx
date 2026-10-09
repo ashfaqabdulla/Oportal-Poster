@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import './App.css'
 
-const API_BASE = 'http://localhost:3000/v1'
+const API_BASE = '/v1'
 
 interface TemplateSchema {
   id: string;

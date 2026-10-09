@@ -1,15 +1,12 @@
-version: '3.8'
-
 services:
   posterforge:
     build: .
     container_name: posterforge
-    ports:
-      - "3000:3000"
+    network_mode: host
     environment:
       - NODE_ENV=production
       - HOST=0.0.0.0
-      - PORT=3000
+      - PORT=8433
     shm_size: '1gb'          # Prevents Chromium crashes
     mem_limit: 2g            # Adjust based on your server
     restart: unless-stopped

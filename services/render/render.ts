@@ -10,7 +10,7 @@ let browser: Browser | null = null;
  */
 async function getBrowser(): Promise<Browser> {
   if (!browser) {
-    browser = await chromium.launch({ channel: 'chrome', args: ['--no-sandbox'] });
+    browser = await chromium.launch({ args: ['--no-sandbox'] });
   }
   return browser;
 }
@@ -232,6 +232,9 @@ export async function render(
         const min = +minStr;
         const max = +maxStr;
         const maxLines = field.maxLines || 0;
+
+        const rawText = (el.textContent || "").trim();
+        if (!rawText) continue; // skip empty / whitespace-only fields
 
         const fits = () => {
           // Temporarily remove fixed height to measure true content height

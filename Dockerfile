@@ -17,7 +17,7 @@ WORKDIR /app
 
 # Install root dependencies (tsx must be in "dependencies")
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 
 # Copy backend services and templates
 COPY services/ ./services/
@@ -29,10 +29,10 @@ COPY --from=ui-builder /app/ui/dist ./public
 # Environment
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
-ENV PORT=3000
+ENV PORT=8433
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
-EXPOSE 3000
+EXPOSE 8433
 
 # ✅ Run local tsx directly so Node receives SIGTERM/SIGINT (bypassing npx network check)
 CMD ["node_modules/.bin/tsx", "services/api/index.ts"]

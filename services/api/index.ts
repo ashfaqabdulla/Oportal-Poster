@@ -36,7 +36,6 @@ class Semaphore {
 }
 
 const renderQueue = new Semaphore(Math.max(1, os.cpus().length - 1));
-const PORT = 3000;
 
 const fastify = Fastify({ logger: true });
 
@@ -115,7 +114,7 @@ fastify.post('/v1/render', async (request, reply) => {
   const cacheKey = crypto.createHash('sha256').update(hashInput).digest('hex');
   const filename = `${cacheKey}.png`;
   const filepath = path.join(OUTPUTS_DIR, filename);
-  const publicUrl = `http://localhost:${PORT}/outputs/${filename}`;
+  const publicUrl = `/outputs/${filename}`;
 
   // Cache hit
   if (existsSync(filepath)) {
@@ -157,7 +156,7 @@ const start = async () => {
       port: Number(process.env.PORT) || 3000, 
       host: process.env.HOST || '0.0.0.0' 
     });
-    fastify.log.info(`🚀 Poster API listening on http://localhost:${PORT}`);
+    fastify.log.info(`🚀 Poster API listening on http://${process.env.HOST || '0.0.0.0'}:${process.env.PORT || 3000}`);
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
