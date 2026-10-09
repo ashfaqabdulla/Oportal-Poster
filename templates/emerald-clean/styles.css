@@ -1,0 +1,198 @@
+@font-face { font-family:'Prompt'; font-weight:700; src:url('../fonts/Prompt-Bold.woff2') format('woff2'); }
+@font-face { font-family:'Prompt'; font-weight:500; src:url('../fonts/Prompt-Medium.woff2') format('woff2'); }
+@font-face { font-family:'Prompt'; font-weight:300; src:url('../fonts/Prompt-Light.woff2') format('woff2'); }
+
+:root {
+  --label:     #1F8A72;
+  --value:     #16294A;
+  --cos-bg:    #D0EDE5;
+  --cos-text:  #1F6B5C;
+  --cos-border:#8FCFC0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.canvas {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  font-family: 'Prompt', sans-serif;
+  color: #FFFFFF;
+  background: #164E42;   /* fallback only — bg image covers this */
+}
+
+/* ---------- Full background image ---------- */
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---------- Logo (top center) ---------- */
+.logo {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo-img {
+  height: 72px;
+  width: auto;
+  display: block;
+}
+.logo-text {
+  font-size: 44px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Slot base ---------- */
+.slot {
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* ---------- Hero title ---------- */
+.title {
+  position: absolute;
+  top: 240px;
+  left: 70px;
+  width: 720px;
+  height: 220px;
+  z-index: 3;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.20);
+}
+
+/* ---------- CoS badge ---------- */
+.cos-wrap {
+  position: absolute;
+  top: 490px;
+  left: 70px;
+  z-index: 3;
+}
+.cos-badge {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--cos-bg);
+  color: var(--cos-text);
+  border: 2px solid var(--cos-border);
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+.cos-badge:empty { display: none; }
+
+/* ---------- Info card ---------- */
+.card {
+  position: absolute;
+  top: 610px;
+  left: 70px;
+  width: 760px;
+  z-index: 3;
+  padding: 50px 55px;
+  background: #FFFFFF;
+  border-radius: 56px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.22),
+    0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.label {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+  color: var(--label);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.value {
+  flex: 1;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.4;
+  color: var(--value);
+}
+
+/* ---------- CTA inside card ---------- */
+.cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px 16px 40px;
+  background: linear-gradient(135deg, #4BA894 0%, #1F6B5C 100%);
+  border-radius: 999px;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 28px rgba(31, 107, 92, 0.35);
+  white-space: nowrap;
+}
+.cta::after {
+  content: '→';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #FFFFFF;
+  color: #1F6B5C;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ---------- Website footer ---------- */
+.website {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,277 @@
+@font-face {
+  font-family: 'Prompt';
+  font-weight: 700;
+  src: url('../fonts/Prompt-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Prompt';
+  font-weight: 500;
+  src: url('../fonts/Prompt-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Prompt';
+  font-weight: 300;
+  src: url('../fonts/Prompt-Light.woff2') format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  font-family: 'Prompt', sans-serif;
+  color: #1A2B3C;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(255, 214, 179, 0.45) 0%, rgba(255, 214, 179, 0) 50%),
+    radial-gradient(circle at 5% 95%, rgba(200, 224, 255, 0.35) 0%, rgba(200, 224, 255, 0) 50%),
+    #F5F1EA;
+}
+
+/* ---------- Accent bar (left edge) ---------- */
+.accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(180deg, #E85A2C 0%, #C63D12 60%, #1A2B3C 100%);
+  z-index: 2;
+}
+
+/* ---------- Decorative dots (top-left, under accent) ---------- */
+.dots-tl {
+  position: absolute;
+  top: 130px;
+  left: 90px;
+  width: 140px;
+  height: 140px;
+  opacity: 0.12;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------- Big subtle circle (right, background) ---------- */
+.deco-circle {
+  position: absolute;
+  top: 60px;
+  right: -260px;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 90, 44, 0.08) 0%, rgba(232, 90, 44, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  position: absolute;
+  top: 70px;
+  right: 70px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.logo-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1A2B3C;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Eyebrow ---------- */
+.eyebrow {
+  position: absolute;
+  top: 180px;
+  left: 90px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.eyebrow-line {
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background: #E85A2C;
+}
+
+.eyebrow-text {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #E85A2C;
+}
+
+/* ---------- Slot base ---------- */
+.slot {
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* ---------- Hero title ---------- */
+.title {
+  position: absolute;
+  top: 220px;
+  left: 90px;
+  width: 900px;
+  z-index: 3;
+  font-weight: 700;
+  font-size: 110px;
+  line-height: 1.32;
+  letter-spacing: -0.035em;
+  color: #1A2B3C;
+  text-transform: uppercase;
+}
+
+/* ---------- Info card ---------- */
+.card {
+  position: absolute;
+  top: 640px;
+  left: 90px;
+  right: 90px;
+  z-index: 3;
+  padding: 32px 40px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid rgba(26, 43, 60, 0.06);
+  box-shadow:
+    0 30px 70px rgba(26, 43, 60, 0.12),
+    0 6px 16px rgba(26, 43, 60, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-row--id {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.card-inline {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.card-label {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: #8B95A5;
+}
+
+.card-value {
+  font-weight: 700;
+  color: #1A2B3C;
+  line-height: 1.32;
+  font-size: 44px;
+}
+
+.card-value--lg {
+  font-size: 40px;
+}
+
+.card-value--md {
+  font-size: 36px;
+}
+
+.card-divider {
+  height: 1px;
+  width: 100%;
+  background: rgba(26, 43, 60, 0.08);
+  margin: 4px 0;
+}
+
+.accent-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #E85A2C;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 6px rgba(232, 90, 44, 0.12);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  position: absolute;
+  bottom: 60px;
+  left: 90px;
+  right: 90px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-rule {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #E85A2C 0%, #E85A2C 25%, rgba(232, 90, 44, 0.15) 100%);
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-website {
+  font-weight: 700;
+  color: #1A2B3C;
+  letter-spacing: 0.02em;
+  font-size: 24px;
+  line-height: 1.32;
+}
+
+.footer-mark {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #E85A2C;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* This makes sure the image doesn't stretch weirdly */
+  z-index: 0;
+  /* Pushes the image behind everything else */
+}

@@ -1,0 +1,153 @@
+@font-face {
+  font-family: 'Prompt';
+  font-weight: 700;
+  src: url('../fonts/Prompt-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Prompt';
+  font-weight: 500;
+  src: url('../fonts/Prompt-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Prompt';
+  font-weight: 300;
+  src: url('../fonts/Prompt-Light.woff2') format('woff2');
+}
+
+:root {
+  --title: #2A7BA8;
+  --cos: #ff0000;
+  --label: #2A7BA8;
+  --value: #0B0F14;
+  --cta-text: #2A7BA8;
+  --website: #0B0F14;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  font-family: 'Prompt', sans-serif;
+  color: var(--value);
+  background: #C9E1F2;
+  /* fallback only */
+}
+
+/* ---------- Full background image ---------- */
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+
+/* ---------- Slot base ---------- */
+.slot {
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* ---------- Hero title ---------- */
+.title {
+  position: absolute;
+  top: 165px;
+  left: 55px;
+  width: 830px;
+  height: 250px;
+  z-index: 3;
+  font-weight: 700;
+  font-size: 88px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--title);
+}
+
+/* ---------- CoS Available ---------- */
+.cos-text {
+  position: absolute;
+  top: 435px;
+  left: 55px;
+  width: fit-content;
+  max-width: 500px;
+  z-index: 3;
+  padding: 8px 24px 6px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(220, 235, 250, 0.25) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 10px 30px rgba(42, 123, 168, 0.10);
+
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.4;
+  color: var(--cos);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Subtle glass panel ---------- */
+.glass {
+  position: absolute;
+  top: 530px;
+  left: 55px;
+  width: 640px;
+  z-index: 3;
+  padding: 44px 44px 40px;
+  border-radius: 28px;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(220, 235, 250, 0.40) 100%);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 20px 50px rgba(42, 123, 168, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.label {
+  flex-shrink: 0;
+  width: 175px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--label);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.value-wrap {
+  flex: 1;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.25;
+  color: var(--value);
+}

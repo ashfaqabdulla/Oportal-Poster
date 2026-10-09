@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="canvas">
+
+    <!-- Full background image (gradient + spheres + nurse all baked in) -->
+    <img class="bg" src="background.png" alt="" onerror="this.style.display='none'" />
+
+    <!-- Logo (top center) -->
+    <!-- <div class="logo">
+      <img class="logo-img" src="logo.png" alt="" onerror="this.style.display='none'" />
+      <div class="logo-text">Oportal</div>
+    </div> -->
+
+    <!-- Hero title -->
+    <div class="slot title" data-field="title" data-min-size="44" data-max-size="72"></div>
+
+    <!-- CoS badge -->
+    <div class="cos-wrap">
+      <div class="slot cos-badge" data-field="cos" data-min-size="20" data-max-size="28"></div>
+    </div>
+
+    <!-- White card with job details -->
+    <div class="card">
+      <div class="row">
+        <span class="label">JOB ID :</span>
+        <div class="slot value" data-field="job_id" data-min-size="24" data-max-size="36"></div>
+      </div>
+
+      <div class="row">
+        <span class="label">JOB TITLE :</span>
+        <div class="slot value" data-field="job_title" data-min-size="24" data-max-size="36"></div>
+      </div>
+
+      <div class="row">
+        <span class="label">LOCATION :</span>
+        <div class="slot value" data-field="location" data-min-size="24" data-max-size="36"></div>
+      </div>
+
+      <div class="row">
+        <span class="label">SALARY :</span>
+        <div class="slot value" data-field="salary" data-min-size="22" data-max-size="34"></div>
+      </div>
+
+      <div class="cta-wrap">
+        <div class="slot cta" data-field="cta" data-min-size="20" data-max-size="26"></div>
+      </div>
+    </div>
+
+    <!-- Website footer -->
+    <!-- <div class="slot website" data-field="website" data-min-size="16" data-max-size="22"></div> -->
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="canvas">
+    <img src="background.png" class="bg" alt="" />
+    <!-- Left accent bar -->
+    <div class="accent-bar"></div>
+
+    <!-- Decorative dot grid (top-left) -->
+    <svg class="dots-tl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dg" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+          <circle cx="4" cy="4" r="3" fill="#1A2B3C" />
+        </pattern>
+      </defs>
+      <rect width="140" height="140" fill="url(#dg)" />
+    </svg>
+
+    <!-- Decorative orange circle (right edge, subtle) -->
+    <div class="deco-circle"></div>
+
+    <!-- Logo -->
+    <div class="logo">
+      <img class="logo-img" src="logo.png" alt="" onerror="this.style.display='none'" />
+    </div>
+
+    <!-- Eyebrow -->
+    <div class="eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">NOW HIRING · CoS AVAILABLE</span>
+    </div>
+
+    <!-- Hero title -->
+    <div class="slot title" data-field="title" data-min-size="56" data-max-size="110"></div>
+
+    <!-- Info card -->
+    <div class="card">
+      <div class="card-row card-row--id">
+        <div class="card-inline">
+          <span class="card-label">JOB ID</span>
+          <div class="slot card-value" data-field="job_id" data-min-size="26" data-max-size="44"></div>
+        </div>
+        <span class="accent-dot"></span>
+      </div>
+
+      <div class="card-divider"></div>
+
+      <div class="card-row">
+        <span class="card-label">JOB TITLE</span>
+        <div class="slot card-value card-value--lg" data-field="job_title" data-min-size="26" data-max-size="40"></div>
+      </div>
+
+      <div class="card-row">
+        <span class="card-label">LOCATION</span>
+        <div class="slot card-value card-value--lg" data-field="location" data-min-size="26" data-max-size="40"
+         ></div>
+      </div>
+
+      <div class="card-row">
+        <span class="card-label">SALARY</span>
+        <div class="slot card-value card-value--md" data-field="salary" data-min-size="24" data-max-size="36"
+         ></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-rule"></div>
+      <div class="footer-row">
+        <div class="slot footer-website" data-field="website" data-min-size="18" data-max-size="26">
+        </div>
+        <div class="footer-mark">→ APPLY TODAY</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

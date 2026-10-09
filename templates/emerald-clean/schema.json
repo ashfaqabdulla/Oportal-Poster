@@ -1,0 +1,20 @@
+{
+  "name": "emerald-clean",
+  "version": 1,
+  "canvas": { "width": 1080, "height": 1350 },
+  "fonts": [
+    { "family": "Prompt", "weight": 700, "file": "../fonts/Prompt-Bold.woff2" },
+    { "family": "Prompt", "weight": 500, "file": "../fonts/Prompt-Medium.woff2" },
+    { "family": "Prompt", "weight": 300, "file": "../fonts/Prompt-Light.woff2" }
+  ],
+  "fields": [
+    { "id": "title",     "type": "text", "maxChars": 60, "maxLines": 2, "required": true },
+    { "id": "cos",       "type": "text", "maxChars": 20, "maxLines": 1, "options": ["COS Available", "COS Plausible"] },
+    { "id": "job_id",    "type": "text", "maxChars": 20, "maxLines": 1 },
+    { "id": "job_title", "type": "text", "maxChars": 60, "maxLines": 2 },
+    { "id": "location",  "type": "text", "maxChars": 60, "maxLines": 2 },
+    { "id": "salary",    "type": "text", "maxChars": 60, "maxLines": 2 },
+    { "id": "cta",       "type": "text", "maxChars": 20, "maxLines": 1 },
+    { "id": "website",   "type": "text", "maxChars": 40, "maxLines": 1, "default": "joblist.oportal.uk" }
+  ]
+}

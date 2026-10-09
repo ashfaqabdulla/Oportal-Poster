@@ -1,0 +1,17 @@
+{
+  "name": "posterforge",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx services/api/index.ts",
+    "render": "tsx tools/render-once.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "@fastify/static": "^10.1.5",
+    "fastify": "^5.12.5",
+    "playwright": "1.48.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

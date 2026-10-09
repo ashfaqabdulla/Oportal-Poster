@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="canvas">
+
+    <!-- Full background image: sky gradient + nurse -->
+    <img class="bg" src="background.png" alt="" onerror="this.style.display='none'" />
+
+    <!-- Hero title (dark blue) -->
+    <div class="slot title" data-field="title" data-min-size="52" data-max-size="88"></div>
+
+    <!-- CoS Available (black, bold) -->
+    <div class="slot cos-text" data-field="cos" data-min-size="24" data-max-size="38"></div>
+
+    <!-- Subtle glass panel -->
+    <div class="glass">
+
+      <div class="row">
+        <span class="label">JOB ID :</span>
+        <div class="value-wrap">
+          <div class="slot value" data-field="job_id" data-min-size="22" data-max-size="34"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="label">LOCATION :</span>
+        <div class="value-wrap">
+          <div class="slot value" data-field="location" data-min-size="22" data-max-size="34"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="label">JOB TITLE :</span>
+        <div class="value-wrap">
+          <div class="slot value" data-field="job_title" data-min-size="22" data-max-size="34"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="label">SALARY :</span>
+        <div class="value-wrap">
+          <div class="slot value" data-field="salary" data-min-size="22" data-max-size="34"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
