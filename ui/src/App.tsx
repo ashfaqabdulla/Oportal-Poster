@@ -45,18 +45,22 @@ function App() {
 
   const handleSelectTemplate = (tpl: TemplateSchema) => {
     setSelectedTemplate(tpl)
-    // Pre-fill initial form data based on required fields and defaults
-    const initialData: Record<string, string> = {}
-    tpl.fields.forEach(f => {
-      if (f.default !== undefined) {
-        initialData[f.id] = f.default
-      } else if (f.required) {
-        initialData[f.id] = f.id.toUpperCase()
-      } else {
-        initialData[f.id] = ''
-      }
+    // Pre-fill initial form data but preserve existing values
+    setFormData(prev => {
+      const newData: Record<string, string> = { ...prev }
+      tpl.fields.forEach(f => {
+        if (newData[f.id] === undefined) {
+          if (f.default !== undefined) {
+            newData[f.id] = f.default
+          } else if (f.required) {
+            newData[f.id] = f.id.toUpperCase()
+          } else {
+            newData[f.id] = ''
+          }
+        }
+      })
+      return newData
     })
-    setFormData(initialData)
     // Clear preview to force a new render
     setPreviewUrl(null)
   }
