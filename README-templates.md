@@ -37,13 +37,15 @@ Every template accepts these seven:
 
 | id          | maxChars | maxLines |
 |-------------|----------|----------|
-| title       | 40       | 2        |
+| title       | 40*      | 2-3      |
 | subtitle    | 60       | 2        |
 | location    | 30       | 1        |
 | salary      | 30       | 1        |
 | description | 220      | 5        |
 | cta         | 20       | 1        |
 | website     | 40       | 1        |
+
+\* Note: `navy-glass` and `sky-glass` support up to **80 chars** (3 lines) for `title`.
 
 ## Notes
 

@@ -10,7 +10,16 @@ let browser: Browser | null = null;
  */
 async function getBrowser(): Promise<Browser> {
   if (!browser) {
-    browser = await chromium.launch({ args: ['--no-sandbox'] });
+    try {
+      browser = await chromium.launch({ args: ['--no-sandbox'] });
+    } catch {
+      // Fallback if `npx playwright install` was not run on host (specified in project-brain.md line 149)
+      try {
+        browser = await chromium.launch({ channel: 'msedge', args: ['--no-sandbox'] });
+      } catch {
+        browser = await chromium.launch({ channel: 'chrome', args: ['--no-sandbox'] });
+      }
+    }
   }
   return browser;
 }

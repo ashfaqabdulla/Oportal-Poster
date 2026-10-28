@@ -15,7 +15,7 @@ const DATA = {
   cta: 'Apply Now',
   website: 'joblist.oportal.uk',
   job_id: 'JB2116',
-  job_title: 'Staff Nurse',
+  job_title: 'Staff Nurse hospital',
   cos: 'CoS Available'
 };
 
